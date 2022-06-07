@@ -41,3 +41,4 @@ Thumbs.db
 FileContentIndex/
 *.suo
 **/obj/Debug/
+*.cache
