@@ -39,6 +39,6 @@ Thumbs.db
 # else #
 ########
 FileContentIndex/
-*.suo
+**.suo
 **/obj/Debug/
-*.cache
+**.cache
