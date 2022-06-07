@@ -35,3 +35,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# else #
+########
+FileContentIndex/
+v16/
+v17/
+Debug/
