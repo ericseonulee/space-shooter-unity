@@ -14,6 +14,9 @@ public class Powerup : MonoBehaviour {
     [SerializeField]
     private PowerupType _powerupType;
 
+    [SerializeField]
+    private AudioClip _audioClip;
+
     // Update is called once per frame
     void Update() {
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
@@ -26,6 +29,8 @@ public class Powerup : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             Player player = other.transform.GetComponent<Player>();
+            AudioSource.PlayClipAtPoint(_audioClip, new Vector3(0, 0, -10), 0.4f);
+
             if (player != null) {
                 switch (_powerupType) {
                     case PowerupType.Tripleshot:

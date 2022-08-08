@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
         _gameOverText.gameObject.SetActive(true);
         _restartText.gameObject.SetActive(true);
         StartCoroutine(GameOverFlickerRoutine());
+        StartCoroutine(RestartFlickerRoutine());
     }
 
     IEnumerator GameOverFlickerRoutine() {
@@ -54,6 +55,15 @@ public class UIManager : MonoBehaviour
             _gameOverText.text = "GAME OVER";
             yield return new WaitForSeconds(0.5f);
             _gameOverText.text = "";
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    IEnumerator RestartFlickerRoutine() {
+        while (true) {
+            _restartText.text = "Press the 'R' key to restart the level";
+            yield return new WaitForSeconds(0.5f);
+            _restartText.text = "";
             yield return new WaitForSeconds(0.5f);
         }
     }

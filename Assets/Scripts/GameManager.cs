@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         //restart the game if R key is pressed.
         if (Input.GetKeyDown(KeyCode.R) && _isGameOver) {
             //SceneManager.LoadScene("Game"); Strings are slower
-            SceneManager.LoadScene(0); // Current Game Scene is scene 0
+            SceneManager.LoadScene(1); // Current Game Scene
         }
     }
 
