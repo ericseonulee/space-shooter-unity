@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
     private AudioSource _audioSource;
     private float _fireRate = 3.0f;
     private float _canFire = -1;
+    private bool _isEnemyDestroyed = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -34,6 +35,12 @@ public class Enemy : MonoBehaviour {
     void Update() {
         CalculateMovement();
 
+        if (!_isEnemyDestroyed) {
+            FireLaser();
+        }
+    }
+
+    void FireLaser() {
         if (Time.time > _canFire) {
             _fireRate = Random.Range(3f, 7f);
             _canFire = Time.time + _fireRate;
@@ -63,6 +70,7 @@ public class Enemy : MonoBehaviour {
                 _player.AddScore(10);
             }
 
+            _isEnemyDestroyed = true;
             _anim.SetTrigger("OnEnemyDeath");
             _speed = 0;
             _audioSource.Play();
@@ -75,7 +83,8 @@ public class Enemy : MonoBehaviour {
             if (player != null) {
                 player.Damage();
             }
-            
+
+            _isEnemyDestroyed = true;
             _anim.SetTrigger("OnEnemyDeath");
             _speed = 0;
             _audioSource.Play();
