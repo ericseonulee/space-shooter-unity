@@ -5,11 +5,10 @@ using UnityEngine;
 public class Laser : MonoBehaviour {
     [SerializeField]
     private float _speed = 8.0f;
-    private bool _isEnemyLaser = false;
 
     // Update is called once per frame
     void Update() {
-        if (_isEnemyLaser == false) {
+        if (this.tag == "Laser") {
             MoveUp();
         }
         else {
@@ -40,11 +39,11 @@ public class Laser : MonoBehaviour {
     }
 
     public void AssignEnemyLaser() {
-        _isEnemyLaser = true;
+        this.tag = "Enemy_Laser";
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Player" && _isEnemyLaser == true) {
+        if (collision.tag == "Player" && this.tag == "Enemy_Laser") {
             Player player = collision.GetComponent<Player>();
             player.Damage();
         }

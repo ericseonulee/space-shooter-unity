@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Laser
   - Tripleshot
+  - Enemy_Laser
   layers:
   - Default
   - TransparentFX
