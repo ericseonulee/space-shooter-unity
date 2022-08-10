@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        transform.position = new Vector3(0, -3, 0);
+        transform.position = new Vector3(0, -2, 0);
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         _audioSource = GetComponent<AudioSource>();
@@ -85,11 +85,11 @@ public class Player : MonoBehaviour {
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         transform.Translate(direction * _speed * Time.deltaTime);
 
-        if (transform.position.y >= 5.7f) {
-            transform.position = new Vector3(transform.position.x, 5.7f, transform.position.z);
+        if (transform.position.y >= 4.7f) {
+            transform.position = new Vector3(transform.position.x, 4.7f, transform.position.z);
         }
-        else if (transform.position.y <= -3.65f) {
-            transform.position = new Vector3(transform.position.x, -3.65f, transform.position.z);
+        else if (transform.position.y <= -4.7f) {
+            transform.position = new Vector3(transform.position.x, -4.7f, transform.position.z);
         }
 
         if (transform.position.x >= 9.5f) {

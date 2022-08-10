@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class UIManager : MonoBehaviour
     private Text _gameOverText;
     [SerializeField]
     private Text _restartText;
+    [SerializeField]
+    private GameObject _pauseMenuPanel;
+    public AudioSource mySFX;
+    public AudioClip hoverSFX;
+    public AudioClip clickSFX;
+    public AudioClip swishoutSFX;
 
     private GameManager _gameManager;
 
@@ -28,6 +35,36 @@ public class UIManager : MonoBehaviour
         if (_gameManager == null) {
             Debug.LogError("GameManage is NULL.");
         }
+    }
+
+    public void ExitGame() {
+        StartCoroutine(GameManager.ExitGameRoutine());
+    }
+
+    public void ResumeGame() {
+        GameManager gm = GameObject.Find("Game_Manager").GetComponent<GameManager>();
+
+        AudioSource.PlayClipAtPoint(clickSFX, new Vector3(0, 0, -10), 0.5f);
+        gm.ResumeGame();
+    }
+
+    public void BackToMainMenu() {
+        GameManager gm = GameObject.Find("Game_Manager").GetComponent<GameManager>();
+
+        AudioSource.PlayClipAtPoint(clickSFX, new Vector3(0, 0, -10), 0.5f);
+        gm.BackToMainMenu();
+    }
+
+    public void ClickSound() {
+        mySFX.PlayOneShot(clickSFX, 0.5f);
+    }
+
+    public void HoverSound() {
+        mySFX.PlayOneShot(hoverSFX, 0.75f);
+    }
+
+    public void SwishoutSound() {
+        mySFX.PlayOneShot(swishoutSFX, 0.5f);
     }
 
     public void UpdateScore(int playerScore) {
@@ -67,4 +104,5 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
     }
+
 }

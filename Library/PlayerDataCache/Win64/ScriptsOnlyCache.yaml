@@ -78,13 +78,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1534}
@@ -103,11 +103,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2430}
     - Class: 114
+      Script: {instanceID: 2530}
+    - Class: 114
       Script: {instanceID: 2702}
+    - Class: 114
+      Script: {instanceID: 2894}
+    - Class: 114
+      Script: {instanceID: 2992}
     - Class: 114
       Script: {instanceID: 3264}
     - Class: 114
       Script: {instanceID: 3406}
+    - Class: 114
+      Script: {instanceID: 3538}
     - Class: 114
       Script: {instanceID: 3858}
     - Class: 114
@@ -288,7 +296,7 @@ ScriptsOnlyBuild:
     className: DepthOfField
   - hash:
       serializedVersion: 2
-      Hash: 65a4cbb8b34bd7d1abb6a1452ae78a22
+      Hash: edccf25cd10175649364fce6de46c853
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -516,7 +524,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 4e3c15e52e0b49959336138754d9be2b
+      Hash: bfbec90de0c9eca65885497591440f1f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager

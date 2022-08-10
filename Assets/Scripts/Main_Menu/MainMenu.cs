@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void ExitGame() {
-        StartCoroutine(ExitGameRoutine());
+        StartCoroutine(GameManager.ExitGameRoutine());
     }
 
     public void HoverSound() {
@@ -31,12 +31,9 @@ public class MainMenu : MonoBehaviour
     }
 
     IEnumerator LoadGameRoutine() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene(1); //game scene
     }
 
-    IEnumerator ExitGameRoutine() {
-        yield return new WaitForSeconds(2f);
-        Application.Quit();
-    }
+    
 }
